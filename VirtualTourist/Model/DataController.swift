@@ -36,8 +36,9 @@ class DataController {
             // enable automatic merging.
             self.viewContext.automaticallyMergesChangesFromParent = true
             self.backgroundContext.automaticallyMergesChangesFromParent = true
-            self.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
-            self.backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+            self.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+            self.backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+            
             completion?()
         }
     
@@ -54,7 +55,12 @@ extension DataController {
         }
         
         if viewContext.hasChanges {
-            try? viewContext.save()
+            do{
+                // save to context
+                try viewContext.save()
+            } catch (let error){
+                print(error)
+            }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {

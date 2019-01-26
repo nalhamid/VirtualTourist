@@ -54,7 +54,12 @@ class PhotoAlbumViewController: UIViewController {
                     let photo = self.fetchedResultsController.object(at: photoIndex)
                     DataController.shared.viewContext.delete(photo)
                 }
-                try? DataController.shared.viewContext.save()
+                do{
+                    // save to context
+                    try DataController.shared.viewContext.save()
+                } catch (let error){
+                    print(error)
+                }
             }
         }else {
             // delete all objects under pin
@@ -63,7 +68,12 @@ class PhotoAlbumViewController: UIViewController {
                     for photo in photoList{
                         DataController.shared.viewContext.delete(photo)
                     }
-                    try? DataController.shared.viewContext.save()
+                    do{
+                        // save to context
+                        try DataController.shared.viewContext.save()
+                    } catch (let error){
+                        print(error)
+                    }
                     // get new images
                     DispatchQueue.main.async {
                         self.photosViewModel.getImages(pin: self.pin, completion: { (success, message) in

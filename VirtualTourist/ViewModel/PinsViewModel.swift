@@ -16,16 +16,20 @@ class PinsViewModel {
     
     // Mark: save pin
     func savePin(lat: Double, long: Double) {
-        DataController.shared.persistentContainer.performBackgroundTask({ (context) in
-            let pin = Pin(context: context)
+        DataController.shared.backgroundContext.perform {
+            let pin = Pin(context: DataController.shared.backgroundContext)
             pin.latitude = lat
             pin.longitude = long
-            // save to context
-            try? context.save()
+            do{
+                // save to context
+                try DataController.shared.backgroundContext.save()
+            } catch (let error){
+                print(error)
+            }
             // get images for the added pin
             self.photosViewModel.getImages(pin: pin) { (success, message) in
             }
-        })
+        }
     }
     
 }

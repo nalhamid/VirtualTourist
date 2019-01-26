@@ -46,7 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func saveViewContext() {
-        try? DataController.shared.viewContext.save()
+        
+        do{
+            // save to context
+            try DataController.shared.viewContext.save()
+            print("imaged saved")
+        } catch (let error){
+            print(error)
+        }
     }
 
 }

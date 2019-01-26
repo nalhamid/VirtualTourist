@@ -62,7 +62,6 @@ extension PhotoAlbumViewController : NSFetchedResultsControllerDelegate{
     
     // Mark: controllerDidChangeContent
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-   //     DispatchQueue.main.async {
             // loop updates
             self.collectionView.performBatchUpdates({
                 for operation in self.blockOperations {
@@ -71,9 +70,6 @@ extension PhotoAlbumViewController : NSFetchedResultsControllerDelegate{
             }, completion:{ (finished) -> Void in
                 self.blockOperations.removeAll(keepingCapacity: false)
             })
-      //  }
-        // reload collection after updates
-        //  collectionView.reloadData()
     }
     
 }

@@ -25,17 +25,23 @@ class PhotosViewModel {
     
     // Mark: SaveImageForPin
     func SaveImageForPin(pinId: NSManagedObjectID, image: UIImage) {
-        DataController.shared.persistentContainer.performBackgroundTask({ (context) in
-            let currentPin = context.object(with: pinId) as! Pin
+        DataController.shared.backgroundContext.perform {
+            let currentPin = DataController.shared.backgroundContext.object(with: pinId) as! Pin
             //create image
-            let photo = Photo(context: context)
+            let photo = Photo(context: DataController.shared.backgroundContext)
             photo.image = image.jpegData(compressionQuality: 1)
             photo.pin = currentPin
             photo.creationDate = Date()
             // save to dataCore
-            try? context.save()
-            print("imaged saved")
-        })
+            do{
+                // save to context
+                try DataController.shared.backgroundContext.save()
+                 print("imaged saved")
+            } catch (let error){
+                print(error)
+            }
+           
+        }
         
     }
     
