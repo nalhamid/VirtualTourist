@@ -8,4 +8,8 @@ target 'VirtualTourist' do
   # your other pod
   # ...
   pod 'Kingfisher', '~> 5.0'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
+  pod 'HGPlaceholders'
+  pod "ViewAnimator"
 end
