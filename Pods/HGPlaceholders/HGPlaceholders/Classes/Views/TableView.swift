@@ -108,7 +108,7 @@ open class TableView: UITableView {
     internal weak var defaultDelegate: UITableViewDelegate?
     
     /// The defaultSeparatorStyle is used to save the tableview separator style, because, when you switch to a placeholder, is changed to `.none`
-    fileprivate var defaultSeparatorStyle: UITableViewCellSeparatorStyle!
+    fileprivate var defaultSeparatorStyle: UITableViewCell.SeparatorStyle!
     
     /// The defaultAlwaysBounceVertical is used to save the tableview bouncing setup, because, when you switch to a placeholder, the vertical bounce is disabled
     fileprivate var defaultAlwaysBounceVertical: Bool!
@@ -143,7 +143,7 @@ open class TableView: UITableView {
      
      - returns: Returns an initialized TableView object, or nil if the object could not be successfully initialized.
      */
-    override public init(frame: CGRect, style: UITableViewStyle) {
+    override public init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
         setup()

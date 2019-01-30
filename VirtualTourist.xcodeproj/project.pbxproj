@@ -29,6 +29,7 @@
 		89626C4321FA7BFE00426890 /* mapFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4221FA7BFE00426890 /* mapFetchedResultsController.swift */; };
 		89626C4521FA7D9D00426890 /* pinExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4421FA7D9D00426890 /* pinExtension.swift */; };
 		89626C4721FB80BC00426890 /* getPinfromCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4621FB80BC00426890 /* getPinfromCoordinates.swift */; };
+		89626C4B2202276800426890 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4A2202276800426890 /* DataRequest.swift */; };
 		89E7708721C827CB00E7F668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7708621C827CB00E7F668 /* AppDelegate.swift */; };
 		89E7708921C827CB00E7F668 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7708821C827CB00E7F668 /* ViewController.swift */; };
 		89E7708C21C827CB00E7F668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E7708A21C827CB00E7F668 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		89626C4221FA7BFE00426890 /* mapFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapFetchedResultsController.swift; sourceTree = "<group>"; };
 		89626C4421FA7D9D00426890 /* pinExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinExtension.swift; sourceTree = "<group>"; };
 		89626C4621FB80BC00426890 /* getPinfromCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPinfromCoordinates.swift; sourceTree = "<group>"; };
+		89626C4A2202276800426890 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		89E7708321C827CB00E7F668 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E7708621C827CB00E7F668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E7708821C827CB00E7F668 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		89E7709E21E2842200E7F668 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				89626C4A2202276800426890 /* DataRequest.swift */,
 				89626C3021F3A2F300426890 /* Kingfisher */,
 				890568A921EA431900AAD8AC /* Flickr */,
 			);
@@ -369,6 +372,7 @@
 				89626C4721FB80BC00426890 /* getPinfromCoordinates.swift in Sources */,
 				89626C2B21F2356C00426890 /* populateMap.swift in Sources */,
 				89626C3421F4EECA00426890 /* imageCell.swift in Sources */,
+				89626C4B2202276800426890 /* DataRequest.swift in Sources */,
 				89626C4521FA7D9D00426890 /* pinExtension.swift in Sources */,
 				89626C3221F3A31100426890 /* imageManager.swift in Sources */,
 				89626C3B21F6392A00426890 /* collectionDelegate.swift in Sources */,
