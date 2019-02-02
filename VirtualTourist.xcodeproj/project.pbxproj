@@ -118,6 +118,14 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
+		89190F642205AA8A00421A9B /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				89626C4A2202276800426890 /* DataRequest.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
 		89626C2521F2193E00426890 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +223,7 @@
 		89E7709E21E2842200E7F668 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				89626C4A2202276800426890 /* DataRequest.swift */,
+				89190F642205AA8A00421A9B /* Alamofire */,
 				89626C3021F3A2F300426890 /* Kingfisher */,
 				890568A921EA431900AAD8AC /* Flickr */,
 			);

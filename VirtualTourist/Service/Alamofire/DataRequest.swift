@@ -31,7 +31,7 @@ extension DataRequest{
                     return .failure(BackendError.jsonSerialization(error: result.error!))
                 }
                 
-                // (1)- Json Decoder. Decodes the data object into expected type T
+                // Json Decoder. Decodes the data object into expected type T
                 // throws error when failes
                 let decoder = JSONDecoder()
                 guard let responseObject = try? decoder.decode(T.self, from: jsonData)else{
@@ -44,25 +44,27 @@ extension DataRequest{
     
     /// @Returns - DataRequest
     /// completionHandler handles JSON Array [T]
-    @discardableResult func responseCollection<T: Decodable>(
-        queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<[T]>) -> Void
-        ) -> Self{
-        
-        let responseSerializer = DataResponseSerializer<[T]>{ request, response, data, error in
-            guard error == nil else {return .failure(BackendError.network(error: error!))}
-            
-            let result = DataRequest.serializeResponseData(response: response, data: data, error: error)
-            guard case let .success(jsonData) = result else{
-                return .failure(BackendError.jsonSerialization(error: result.error!))
-            }
-            
-            let decoder = JSONDecoder()
-            guard let responseArray = try? decoder.decode([T].self, from: jsonData)else{
-                return .failure(BackendError.objectSerialization(reason: "JSON array could not be serialized \(String(data: jsonData, encoding: .utf8)!)"))
-            }
-            
-            return .success(responseArray)
-        }
-        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
-    }
+//    @discardableResult func responseCollection<T: Decodable>(
+//        queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<[T]>) -> Void
+//        ) -> Self{
+//        
+//        let responseSerializer = DataResponseSerializer<[T]>{ request, response, data, error in
+//            guard error == nil else {return .failure(BackendError.network(error: error!))}
+//            
+//            let result = DataRequest.serializeResponseData(response: response, data: data, error: error)
+//            guard case let .success(jsonData) = result else{
+//                return .failure(BackendError.jsonSerialization(error: result.error!))
+//            }
+//            
+//            // Json Decoder. Decodes the data object into expected type T
+//            // throws error when failes
+//            let decoder = JSONDecoder()
+//            guard let responseArray = try? decoder.decode([T].self, from: jsonData)else{
+//                return .failure(BackendError.objectSerialization(reason: "JSON array could not be serialized \(String(data: jsonData, encoding: .utf8)!)"))
+//            }
+//            
+//            return .success(responseArray)
+//        }
+//        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+//    }
 }

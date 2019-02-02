@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import Alamofire
+
 extension FlickrAPI {
     // Mark: get photos by locations
     func getPhotosByLocation(lat: Double, long: Double, completion: @escaping (Photos, Bool, String)->()){
         dispatchQueue.async {
+            var flickrPhotos = Photos()
             // set url with parameters
             var paramUrl = self.getFlickrUrl(lat: lat, long: long, pageNum: nil)
             // get number of pages
             self.getTotalPages(requestUrl: paramUrl) { (numberOfPages, success, message) in
-                var flickrPhotos = Photos()
                 // check if get total pages success
                 if(!success){
                     //return if failed
@@ -25,43 +27,35 @@ extension FlickrAPI {
                 paramUrl = self.getFlickrUrl(lat: lat, long: long, pageNum: numberOfPages)
                 // send url request
                 let request = URLRequest(url: paramUrl)
-                let task = self.sharedSession.dataTask(with: request ) { ( data, response, error)  in
-                    DispatchQueue.main.async {
-                        var errorMessage : String = ""
-                        //  check if the request have an error
-                        guard (error == nil) else {
-                            errorMessage = "There was an error with your request: \(error!)"
-                            completion(flickrPhotos, false, errorMessage)
-                            return
-                        }
-                        // check if the response successful (2XX response)
-                        guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                            let code = (response as? HTTPURLResponse)?.statusCode
-                            errorMessage = "Your request was not successful. code: \(code!)"
-                            completion(flickrPhotos, false, errorMessage)
-                            return
-                        }
-                        // check if there any data returned
-                        guard let data = data else {
-                            errorMessage = "No data was returned by the request!"
-                            completion(flickrPhotos, false, errorMessage)
-                            return
-                        }
-                        // parse data
-                        do {
-                            // parse resulting data
-                            let flickr  = try JSONDecoder().decode(Flickr.self, from: data)
-                            flickrPhotos = flickr.photos
-                            
-                        } catch let jsonErr {
-                            errorMessage = "Failed to decode data. error: \(jsonErr)"
-                            completion(flickrPhotos, false, errorMessage)
-                        }
-                        // return results
-                        completion(flickrPhotos, true, errorMessage)
+                // make request with Alamofire
+                Alamofire.request(request).validate().responseObject(completionHandler: { (response: DataResponse<Flickr>) in
+                    // default values
+                    
+                    var errorMessage : String = ""
+                    var success = false
+                    
+                    // switch based on success
+                    switch response.result {
+                    // if successed
+                    case .success :
+                        // validate data
+                        if let resultPhotos = response.value {
+                            // get images
+                                flickrPhotos = resultPhotos.photos
+                                success = true
+                            } else {
+                                errorMessage = "There was an error with your request"
+                            }
+                        break
+                    // if failed
+                    case .failure(let error):
+                        errorMessage = "There was an error with your request: \(error)"
+                        break
                     }
-                }
-                task.resume()
+                    // return results
+                    completion(flickrPhotos, success, errorMessage)
+                })
+                
             }
         }
     }
