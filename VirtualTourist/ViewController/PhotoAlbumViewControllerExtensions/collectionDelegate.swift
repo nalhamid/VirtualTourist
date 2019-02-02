@@ -10,29 +10,27 @@ import UIKit
 import Kingfisher
 
 extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+    
     // Mark: number of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var numOfItems = 0
+        showMessage("Loading...")
         // fetchedResultsController
         guard let fetchedResultsController = self.fetchedResultsController else {
-            //set Activity Indicator
-            activityIndicator.startAnimating()
             showMessage("Loading...")
             return 0
         }
         // check section
         guard let sections = fetchedResultsController.sections else {
-            activityIndicator.stopAnimating()
-            showMessage("No Photos near this location")
+            showMessage("Loading...")
             return 0
         }
-        activityIndicator.stopAnimating()
         // return number of images or zero if nil
         numOfItems = sections[0].numberOfObjects
 
         if (numOfItems == 0){
             // set "no images" message
-            showMessage("No Photos near this location")
+            showMessage("Loading...")
         }else {
             // remove message
             restoreCollectionview()
@@ -86,5 +84,6 @@ extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionVie
             newCollections.setTitle("Get New Collection", for: .normal)
         }
     }
-    
+
 }
+

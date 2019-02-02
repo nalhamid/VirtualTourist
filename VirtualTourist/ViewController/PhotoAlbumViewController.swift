@@ -11,16 +11,18 @@ import CoreData
 
 class PhotoAlbumViewController: UIViewController {
     
-    // set outlets
+    // Mark: Outlets
     @IBOutlet weak var newCollections: UIButton!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var collectionView: UICollectionView!
-    // vars
+    
+    // activity Indicator
+    let activityIndicator = UIActivityIndicatorView()
+    
+    // Mark: Variables
     var pin : Pin!
     var fetchedResultsController : NSFetchedResultsController<Photo>!
     var blockOperations = [BlockOperation]()
-    // activity Indicator
-    let activityIndicator = UIActivityIndicatorView()
     //view model connect
     var pinViewModel = PinsViewModel()
     var photosViewModel = PhotosViewModel()

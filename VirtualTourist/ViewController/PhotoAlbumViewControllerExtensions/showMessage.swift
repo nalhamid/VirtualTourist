@@ -11,6 +11,8 @@ import UIKit
 extension PhotoAlbumViewController {
     // Mark: showMessage
     func showMessage(_ message: String) {
+        //set Activity Indicator
+        activityIndicator.startAnimating()
         // set message if there is no photos to view
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
         messageLabel.text = message
@@ -24,6 +26,8 @@ extension PhotoAlbumViewController {
     }
     // Mark: restoreCollectionview
     func restoreCollectionview() {
+        //stop Activity Indicator
+        activityIndicator.stopAnimating()
         collectionView.backgroundView = nil
     }
 }

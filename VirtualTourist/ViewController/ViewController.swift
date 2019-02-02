@@ -12,10 +12,12 @@ import CoreData
 
 
 class ViewController: UIViewController {
-    // Mark: outlets
+    // Mark: Outlets
     @IBOutlet weak var mapView: MKMapView!
     // activity Indicator
     let activityIndicator = UIActivityIndicatorView()
+    
+    // Mark: Variables
     //view model connect
     var pinViewModel = PinsViewModel()
     var photosViewModel = PhotosViewModel()
