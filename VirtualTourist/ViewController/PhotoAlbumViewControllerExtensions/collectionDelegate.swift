@@ -51,15 +51,18 @@ extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionVie
         activityIndicator.stopAnimating()
         return cell
     }
+    
     // set collection view features
     // Mark: shouldSelectItemAt
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     // Mark: shouldDeselectItemAt
     func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     // Mark: didSelectItemAt
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // set cell settings for selections
@@ -70,6 +73,7 @@ extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionVie
         // change button label
         newCollections.setTitle("Delete Selected Images", for: .normal)
     }
+    
     // Mark: didDeselectItemAt
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         // reset cell 

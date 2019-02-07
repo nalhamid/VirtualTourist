@@ -9,7 +9,5 @@ target 'VirtualTourist' do
   # ...
   pod 'Kingfisher', '~> 5.0'
   pod 'Alamofire', '~> 4.7'
-  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
-  pod 'HGPlaceholders'
-  pod "ViewAnimator"
+  pod 'UIEmptyState'
 end

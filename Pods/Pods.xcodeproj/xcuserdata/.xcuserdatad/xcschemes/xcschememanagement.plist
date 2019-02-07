@@ -9,16 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireNetworkActivityIndicator.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>HGPlaceholders.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,7 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ViewAnimator.xcscheme</key>
+		<key>UIEmptyState.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
