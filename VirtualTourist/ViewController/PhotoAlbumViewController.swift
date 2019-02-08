@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import UIEmptyState
 
-class PhotoAlbumViewController: UIViewController {
+class PhotoAlbumViewController : UIViewController {
     
     // Mark: Outlets
     @IBOutlet weak var newCollections: UIButton!
@@ -30,6 +31,8 @@ class PhotoAlbumViewController: UIViewController {
     // Mark: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set empty state
+        setUIEmptyState()
         //Allow multiple collections
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = true
@@ -44,6 +47,12 @@ class PhotoAlbumViewController: UIViewController {
         setFetchedResultsController()
         // set flow layout
         setFlowLayout()
+    }
+    
+    // Mark: viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.reloadEmptyStateForCollectionView(self.collectionView)
     }
     
     // Mark: getNewCollection

@@ -25,11 +25,11 @@
 		89626C3B21F6392A00426890 /* collectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C3A21F6392A00426890 /* collectionDelegate.swift */; };
 		89626C3D21F797BF00426890 /* setActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C3C21F797BF00426890 /* setActivityIndicator.swift */; };
 		89626C3F21F79B3300426890 /* showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C3E21F79B3300426890 /* showAlert.swift */; };
-		89626C4121F8F45A00426890 /* showMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4021F8F45A00426890 /* showMessage.swift */; };
 		89626C4321FA7BFE00426890 /* mapFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4221FA7BFE00426890 /* mapFetchedResultsController.swift */; };
 		89626C4521FA7D9D00426890 /* pinExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4421FA7D9D00426890 /* pinExtension.swift */; };
 		89626C4721FB80BC00426890 /* getPinfromCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4621FB80BC00426890 /* getPinfromCoordinates.swift */; };
 		89626C4B2202276800426890 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89626C4A2202276800426890 /* DataRequest.swift */; };
+		89732BC0220CCC4400B6D0B8 /* setUIEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89732BBF220CCC4400B6D0B8 /* setUIEmptyState.swift */; };
 		89E7708721C827CB00E7F668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7708621C827CB00E7F668 /* AppDelegate.swift */; };
 		89E7708921C827CB00E7F668 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7708821C827CB00E7F668 /* ViewController.swift */; };
 		89E7708C21C827CB00E7F668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E7708A21C827CB00E7F668 /* Main.storyboard */; };
@@ -60,11 +60,11 @@
 		89626C3A21F6392A00426890 /* collectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionDelegate.swift; sourceTree = "<group>"; };
 		89626C3C21F797BF00426890 /* setActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setActivityIndicator.swift; sourceTree = "<group>"; };
 		89626C3E21F79B3300426890 /* showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
-		89626C4021F8F45A00426890 /* showMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMessage.swift; sourceTree = "<group>"; };
 		89626C4221FA7BFE00426890 /* mapFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapFetchedResultsController.swift; sourceTree = "<group>"; };
 		89626C4421FA7D9D00426890 /* pinExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinExtension.swift; sourceTree = "<group>"; };
 		89626C4621FB80BC00426890 /* getPinfromCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPinfromCoordinates.swift; sourceTree = "<group>"; };
 		89626C4A2202276800426890 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		89732BBF220CCC4400B6D0B8 /* setUIEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setUIEmptyState.swift; sourceTree = "<group>"; };
 		89E7708321C827CB00E7F668 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E7708621C827CB00E7F668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E7708821C827CB00E7F668 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				89626C3721F4FA4000426890 /* setFetchedResultsController.swift */,
 				89626C3521F4F56900426890 /* setFlowLayout.swift */,
 				89626C3A21F6392A00426890 /* collectionDelegate.swift */,
-				89626C4021F8F45A00426890 /* showMessage.swift */,
+				89732BBF220CCC4400B6D0B8 /* setUIEmptyState.swift */,
 			);
 			path = PhotoAlbumViewControllerExtensions;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 				89626C2D21F237D700426890 /* longPressed.swift in Sources */,
 				890568A621E6671300AAD8AC /* FlickrAPI.swift in Sources */,
 				89626C3621F4F56900426890 /* setFlowLayout.swift in Sources */,
-				89626C4121F8F45A00426890 /* showMessage.swift in Sources */,
+				89732BC0220CCC4400B6D0B8 /* setUIEmptyState.swift in Sources */,
 				89626C3D21F797BF00426890 /* setActivityIndicator.swift in Sources */,
 				89626C2F21F38FD800426890 /* DataController.swift in Sources */,
 				89E770A321E2941300E7F668 /* PhotoAlbumViewController.swift in Sources */,

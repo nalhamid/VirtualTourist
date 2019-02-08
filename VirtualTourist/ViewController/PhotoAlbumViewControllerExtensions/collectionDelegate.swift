@@ -14,34 +14,25 @@ extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionVie
     // Mark: number of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var numOfItems = 0
-        showMessage("Loading...")
+        
         // fetchedResultsController
         guard let fetchedResultsController = self.fetchedResultsController else {
-            showMessage("Loading...")
             return 0
         }
         // check section
         guard let sections = fetchedResultsController.sections else {
-            showMessage("Loading...")
             return 0
         }
         // return number of images or zero if nil
         numOfItems = sections[0].numberOfObjects
-
-        if (numOfItems == 0){
-            // set "no images" message
-            showMessage("Loading...")
-        }else {
-            // remove message
-            restoreCollectionview()
-        }
+        
         return numOfItems
     }
     
     // Mark: cellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! imageViewCell
-       activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
         // retrive image
         if let image = fetchedResultsController.object(at: indexPath).image {
             cell.image.image = UIImage(data:image)
@@ -88,6 +79,6 @@ extension PhotoAlbumViewController : UICollectionViewDataSource, UICollectionVie
             newCollections.setTitle("Get New Collection", for: .normal)
         }
     }
-
+    
 }
 

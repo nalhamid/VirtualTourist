@@ -69,6 +69,7 @@ extension PhotoAlbumViewController : NSFetchedResultsControllerDelegate{
                 }
             }, completion:{ (finished) -> Void in
                 self.blockOperations.removeAll(keepingCapacity: false)
+                self.reloadEmptyStateForCollectionView(self.collectionView)
             })
     }
     

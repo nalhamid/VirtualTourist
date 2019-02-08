@@ -10,4 +10,5 @@ target 'VirtualTourist' do
   pod 'Kingfisher', '~> 5.0'
   pod 'Alamofire', '~> 4.7'
   pod 'UIEmptyState'
+
 end
